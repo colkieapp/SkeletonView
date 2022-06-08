@@ -46,6 +46,7 @@ public extension SkeletonTableViewDataSource {
 public protocol SkeletonTableViewDelegate: UITableViewDelegate {
     func collectionSkeletonView(_ skeletonView: UITableView, identifierForHeaderInSection section: Int) -> ReusableHeaderFooterIdentifier?
     func collectionSkeletonView(_ skeletonView: UITableView, identifierForFooterInSection section: Int) -> ReusableHeaderFooterIdentifier?
+    func collectionSkeletonView(_ skeletonView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
 }
 
 public extension SkeletonTableViewDelegate {

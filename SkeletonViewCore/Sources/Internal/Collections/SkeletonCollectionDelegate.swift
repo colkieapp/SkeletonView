@@ -49,6 +49,10 @@ extension SkeletonCollectionDelegate: UITableViewDelegate {
         originalTableViewDelegate?.tableView?(tableView, didEndDisplaying: cell, forRowAt: indexPath)
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        originalTableViewDelegate?.collectionSkeletonView(tableView, heightForRowAt: indexPath) ?? UITableView.automaticDimension
+    }
+    
 }
 
 // MARK: - UICollectionViewDelegate
