@@ -47,6 +47,8 @@ public protocol SkeletonTableViewDelegate: UITableViewDelegate {
     func collectionSkeletonView(_ skeletonView: UITableView, identifierForHeaderInSection section: Int) -> ReusableHeaderFooterIdentifier?
     func collectionSkeletonView(_ skeletonView: UITableView, identifierForFooterInSection section: Int) -> ReusableHeaderFooterIdentifier?
     func collectionSkeletonView(_ skeletonView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    func collectionSkeletonView(_ skeletonView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+    func collectionSkeletonView(_ skeletonView: UITableView, heightForFooterInSection section: Int) -> CGFloat
 }
 
 public extension SkeletonTableViewDelegate {
@@ -56,5 +58,17 @@ public extension SkeletonTableViewDelegate {
 
     func collectionSkeletonView(_ skeletonView: UITableView, identifierForFooterInSection section: Int) -> ReusableHeaderFooterIdentifier? {
         return nil
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        UITableView.automaticDimension
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        UITableView.automaticDimension
     }
 }
