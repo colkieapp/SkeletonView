@@ -27,10 +27,12 @@ class SkeletonCollectionDelegate: NSObject {
 extension SkeletonCollectionDelegate: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        originalTableViewDelegate?.collectionSkeletonView(tableView, viewForHeaderInSection: section) ??
         headerOrFooterView(tableView, for: originalTableViewDelegate?.collectionSkeletonView(tableView, identifierForHeaderInSection: section))
     }
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        originalTableViewDelegate?.collectionSkeletonView(tableView, viewForFooterInSection: section) ??
         headerOrFooterView(tableView, for: originalTableViewDelegate?.collectionSkeletonView(tableView, identifierForFooterInSection: section))
     }
 
